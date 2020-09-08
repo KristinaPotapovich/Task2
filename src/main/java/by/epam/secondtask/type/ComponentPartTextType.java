@@ -1,9 +1,8 @@
 package by.epam.secondtask.type;
 
-public enum PartTextType {
+public enum ComponentPartTextType {
+    TEXT,
     PARAGRAPH,
     SENTENCE,
-    WORD,
     LEXEME,
-    SYMBOL;
 }

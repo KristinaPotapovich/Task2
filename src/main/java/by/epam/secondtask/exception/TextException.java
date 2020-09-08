@@ -1,6 +1,6 @@
 package by.epam.secondtask.exception;
 
-public class TextException extends Exception{
+public class TextException extends Exception {
     public TextException() {
         super();
     }
