@@ -58,7 +58,7 @@ public class PartText implements ComponentText {
 
     @Override
     public String toString() {
-        return "" + component;
+        return Character.toString(component);
     }
 }
 
