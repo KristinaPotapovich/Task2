@@ -35,6 +35,10 @@ public class CompositeText implements ComponentText {
         return currentType;
     }
 
+    public List<ComponentText> getComponents() {
+        return components;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -57,10 +61,10 @@ public class CompositeText implements ComponentText {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         for (ComponentText component : components) {
-            if (ComponentPartTextType.PARAGRAPH.equals(component.findPartTextType())) {
+            if (ComponentPartTextType.PARAGRAPH == component.findPartTextType()) {
                 builder.append("\n");
             }
-            if (ComponentPartTextType.LEXEME.equals(component.findPartTextType())) {
+            if (ComponentPartTextType.LEXEME == component.findPartTextType()) {
                 builder.append(" ");
             }
             builder.append(component);

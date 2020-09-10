@@ -9,14 +9,18 @@ import by.epam.secondtask.type.ComponentPartTextType;
 import java.util.regex.Pattern;
 
 public class SymbolParser implements BaseParser {
-    private static final SymbolParser instance = new SymbolParser();
+    private static SymbolParser instance;
     private static final String LETTER = "[a-zA-Z]";
     private static final String PUNCTUATION = "\\p{Punct}";
+    private static final String NUMBER = "[\\d]";
 
     private SymbolParser() {
     }
 
     public static SymbolParser getInstance() {
+        if (instance == null) {
+            instance = new SymbolParser();
+        }
         return instance;
     }
 
@@ -31,6 +35,9 @@ public class SymbolParser implements BaseParser {
             } else if (Pattern.matches(PUNCTUATION, symbol.toString())) {
                 PartText partTextPunct = new PartText(symbol, PartText.Type.PUNCTUATION);
                 componentText.add(partTextPunct);
+            } else if (Pattern.matches(NUMBER, symbol.toString())) {
+                PartText partText = new PartText(symbol, PartText.Type.NUMBER);
+                componentText.add(partText);
             }
         }
         return componentText;

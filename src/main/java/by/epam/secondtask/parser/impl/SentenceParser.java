@@ -6,7 +6,7 @@ import by.epam.secondtask.parser.BaseParser;
 import by.epam.secondtask.type.ComponentPartTextType;
 
 public class SentenceParser implements BaseParser {
-    private static final SentenceParser instance = new SentenceParser();
+    private static SentenceParser instance;
     private static final String SENTENCE_DELIMITER = "\\[.?!...][^.?!...]+";
     private final LexemeParser lexemeParser = LexemeParser.getInstance();
 
@@ -14,6 +14,9 @@ public class SentenceParser implements BaseParser {
     }
 
     public static SentenceParser getInstance() {
+        if (instance == null) {
+            instance = new SentenceParser();
+        }
         return instance;
     }
 

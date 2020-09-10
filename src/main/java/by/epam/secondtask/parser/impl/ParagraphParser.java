@@ -7,8 +7,8 @@ import by.epam.secondtask.type.ComponentPartTextType;
 
 
 public class ParagraphParser implements BaseParser {
-    private static final ParagraphParser instance = new ParagraphParser();
-    private static final String PARAGRAPH_DELIMITER = "[\n\t]+";
+    private static ParagraphParser instance;
+    private static final String PARAGRAPH_DELIMITER = "(?m)(?=^\\s{4})";
     private final SentenceParser sentenceParser = SentenceParser.getInstance();
 
 
@@ -16,13 +16,17 @@ public class ParagraphParser implements BaseParser {
     }
 
     public static ParagraphParser getInstance() {
+        if (instance == null) {
+            instance = new ParagraphParser();
+        }
         return instance;
     }
 
     @Override
     public ComponentText parse(String text) {
         ComponentText componentText = new CompositeText(ComponentPartTextType.TEXT);
-       String[] paragraphs = text.split(PARAGRAPH_DELIMITER);
+
+        String[] paragraphs = text.split(PARAGRAPH_DELIMITER);
         for (String paragraph : paragraphs) {
             ComponentText componentSentence = sentenceParser.parse(paragraph.trim());
             componentText.add(componentSentence);

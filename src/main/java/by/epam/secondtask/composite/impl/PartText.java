@@ -3,9 +3,10 @@ package by.epam.secondtask.composite.impl;
 import by.epam.secondtask.composite.ComponentText;
 import by.epam.secondtask.type.ComponentPartTextType;
 
+
 public class PartText implements ComponentText {
     public enum Type {
-        PUNCTUATION, LETTER
+        PUNCTUATION, LETTER, NUMBER
     }
 
     private char component;
@@ -35,6 +36,7 @@ public class PartText implements ComponentText {
     public ComponentPartTextType findPartTextType() {
         return null;
     }
+
 
     @Override
     public boolean equals(Object o) {
