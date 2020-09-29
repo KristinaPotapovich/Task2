@@ -1,10 +1,10 @@
 package by.epam.secondtask.parser.impl;
 
-import by.epam.secondtask.interpreter.InterpreterInitValueForText;
+import by.epam.secondtask.calculate.CalculateValueForText;
 import by.epam.secondtask.composite.ComponentText;
 import by.epam.secondtask.composite.impl.CompositeText;
 import by.epam.secondtask.parser.BaseParser;
-import by.epam.secondtask.type.ComponentPartTextType;
+import by.epam.secondtask.composite.ComponentPartTextType;
 
 public class LexemeParser implements BaseParser {
     private static LexemeParser instance;
@@ -24,12 +24,11 @@ public class LexemeParser implements BaseParser {
 
     @Override
     public ComponentText parse(String sentence) {
-
         ComponentText componentText = new CompositeText(ComponentPartTextType.SENTENCE);
         String[] lexemes = sentence.split(LEXEME_DELIMITER);
         for (String lexeme : lexemes) {
             if (lexeme.matches(LEXEME_FORMULA)) {
-                lexeme = lexeme.replaceAll(LEXEME_FORMULA, InterpreterInitValueForText.initValue(lexeme));
+                lexeme = lexeme.replaceAll(LEXEME_FORMULA, CalculateValueForText.initValue(lexeme));
             }
             ComponentText componentSymbols = symbolParser.parse(lexeme);
             componentText.add(componentSymbols);

@@ -3,7 +3,7 @@ package by.epam.secondtask.parser.impl;
 import by.epam.secondtask.composite.ComponentText;
 import by.epam.secondtask.composite.impl.CompositeText;
 import by.epam.secondtask.parser.BaseParser;
-import by.epam.secondtask.type.ComponentPartTextType;
+import by.epam.secondtask.composite.ComponentPartTextType;
 
 
 public class ParagraphParser implements BaseParser {
@@ -25,7 +25,6 @@ public class ParagraphParser implements BaseParser {
     @Override
     public ComponentText parse(String text) {
         ComponentText componentText = new CompositeText(ComponentPartTextType.TEXT);
-
         String[] paragraphs = text.split(PARAGRAPH_DELIMITER);
         for (String paragraph : paragraphs) {
             ComponentText componentSentence = sentenceParser.parse(paragraph.trim());

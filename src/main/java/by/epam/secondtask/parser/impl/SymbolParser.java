@@ -4,13 +4,13 @@ import by.epam.secondtask.composite.ComponentText;
 import by.epam.secondtask.composite.impl.CompositeText;
 import by.epam.secondtask.composite.impl.PartText;
 import by.epam.secondtask.parser.BaseParser;
-import by.epam.secondtask.type.ComponentPartTextType;
+import by.epam.secondtask.composite.ComponentPartTextType;
 
 import java.util.regex.Pattern;
 
 public class SymbolParser implements BaseParser {
     private static SymbolParser instance;
-    private static final String LETTER = "[a-zA-Z]";
+    private static final String LETTER = "[a-zA-Zа-яА-Я]";
     private static final String PUNCTUATION = "\\p{Punct}";
     private static final String NUMBER = "[\\d]";
 
@@ -33,8 +33,8 @@ public class SymbolParser implements BaseParser {
                 PartText partTextLetter = new PartText(symbol, PartText.Type.LETTER);
                 componentText.add(partTextLetter);
             } else if (Pattern.matches(PUNCTUATION, symbol.toString())) {
-                PartText partTextPunct = new PartText(symbol, PartText.Type.PUNCTUATION);
-                componentText.add(partTextPunct);
+                PartText partTextPunctual = new PartText(symbol, PartText.Type.PUNCTUATION);
+                componentText.add(partTextPunctual);
             } else if (Pattern.matches(NUMBER, symbol.toString())) {
                 PartText partText = new PartText(symbol, PartText.Type.NUMBER);
                 componentText.add(partText);

@@ -1,8 +1,7 @@
 package by.epam.secondtask.composite;
 
-import by.epam.secondtask.type.ComponentPartTextType;
 
-
+import java.util.List;
 
 public interface ComponentText {
     void add(ComponentText componentText);
@@ -13,5 +12,5 @@ public interface ComponentText {
 
     ComponentPartTextType findPartTextType();
 
-
+    List<ComponentText> getComponents();
 }

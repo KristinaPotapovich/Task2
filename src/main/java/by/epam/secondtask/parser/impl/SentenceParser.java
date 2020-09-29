@@ -3,7 +3,7 @@ package by.epam.secondtask.parser.impl;
 import by.epam.secondtask.composite.ComponentText;
 import by.epam.secondtask.composite.impl.CompositeText;
 import by.epam.secondtask.parser.BaseParser;
-import by.epam.secondtask.type.ComponentPartTextType;
+import by.epam.secondtask.composite.ComponentPartTextType;
 
 public class SentenceParser implements BaseParser {
     private static SentenceParser instance;

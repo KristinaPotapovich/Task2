@@ -1,7 +1,7 @@
 package by.epam.secondtask.composite.impl;
 
 import by.epam.secondtask.composite.ComponentText;
-import by.epam.secondtask.type.ComponentPartTextType;
+import by.epam.secondtask.composite.ComponentPartTextType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +35,7 @@ public class CompositeText implements ComponentText {
         return currentType;
     }
 
+    @Override
     public List<ComponentText> getComponents() {
         return components;
     }

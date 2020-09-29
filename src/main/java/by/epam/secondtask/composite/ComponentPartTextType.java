@@ -1,4 +1,4 @@
-package by.epam.secondtask.type;
+package by.epam.secondtask.composite;
 
 public enum ComponentPartTextType {
     TEXT,
