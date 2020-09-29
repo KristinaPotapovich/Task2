@@ -27,14 +27,12 @@ public class PartText implements ComponentText {
     public void add(ComponentText componentText) {
         LOGGER.log(Level.ERROR,"Add operation  is not possible");
         throw new UnsupportedOperationException("Add operation is not possible");
-
     }
 
     @Override
     public void remove(ComponentText componentText) {
         LOGGER.log(Level.ERROR,"Remove operation is not possible");
         throw new UnsupportedOperationException("Remove operation is not possible");
-
     }
 
     @Override

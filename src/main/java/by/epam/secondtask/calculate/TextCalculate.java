@@ -7,6 +7,9 @@ import java.util.List;
 
 
 public class TextCalculate {
+    private TextCalculate() {
+    }
+
     public static int calculateLexemesLength(ComponentText sentence) {
         int sum = 0;
         List<ComponentText> lexemes = sentence.getComponents();
@@ -41,6 +44,5 @@ public class TextCalculate {
         }
         return counter;
     }
-
 }
 
